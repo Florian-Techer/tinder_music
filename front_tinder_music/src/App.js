@@ -1,14 +1,15 @@
 import React from "react";
-import LoginBtn from "./components/LoginBtn.js";
-import AuthCallback from "./components/AuthCallback.js";
 import "./App.css";
-
+import LoginButton from "./components/LoginButton";
+import AuthSuccess from "./components/AuthSuccess";
 function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const accessToken = urlParams.get("access_token");
 
   return (
-    <div className="App">{accessToken ? <AuthCallback /> : <LoginBtn />}</div>
+    <div className="App">
+      {accessToken ? <AuthSuccess /> : <LoginButton />}
+    </div>
   );
 }
 
